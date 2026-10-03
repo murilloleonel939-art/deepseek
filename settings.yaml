@@ -1,3 +1,50 @@
+  llm-pi-ai:
+  providers:
+    openai:
+      displayName: OpenAI
+      apiKeyEnv: OPENAI_API_KEY
+      api: openai-completions
+      baseURL: https://api.openai.com/v1
+      defaultContextWindow: 128000
+      defaultMaxTokens: 8192
+      models:
+        - id: gpt-5.6-luna
+          name: GPT-5.6 Luna
+          input: [text, image]
+        - id: gpt-4-turbo
+          name: GPT-4 Turbo
+          input: [text, image]
+    anthropic:
+      displayName: Claude
+      apiKeyEnv: ANTHROPIC_API_KEY
+      api: anthropic-messages
+      baseURL: https://api.anthropic.com
+      defaultContextWindow: 200000
+      defaultMaxTokens: 8192
+      models:
+        - id: claude-sonnet-5-5
+          name: Claude Sonnet 5.5
+          input: [text, image]
+        - id: claude-haiku-4-5-20251001
+          name: Claude Haiku 4.5
+          input: [text, image]
+    google:
+      displayName: Gemini
+      apiKeyEnv: GEMINI_API_KEY
+      api: openai-completions
+      baseURL: https://generativelanguage.googleapis.com/v1beta/openai
+      defaultContextWindow: 128000
+      defaultMaxTokens: 8192
+      models:
+        - id: gemini-3.8-flash
+          name: Gemini 3.8 Flash
+          input: [text, image]
+        - id: gemini-3.5-flash-lite
+          name: Gemini 3.5 Flash-Lite
+          input: [text, image]
+        - id: gemini-3.1-pro-preview
+          name: Gemini 3.1 Pro (preview)
+          input: [text, image]
     openrouter:
       displayName: OpenRouter
       apiKeyEnv: OPENROUTER_API_KEY
