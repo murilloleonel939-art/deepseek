@@ -8,7 +8,7 @@ if [ -f /app/settings.yaml ]; then
 fi
 
 # Arranca dsh y captura el token
-su dsh -c "cd /home/dsh/workspace && dsh web --no-open --port 3080 --trusted-host midsh.duckdns.org 2>&1 | tee /tmp/dsh.log" &
+su dsh -c "cd /home/dsh/workspace && dsh web --no-open --port 3080 --trusted-host constructor.zottagroup.com 2>&1 | tee /tmp/dsh.log" &
 
 # Espera a que dsh inicie y extrae el token
 TOKEN=""
