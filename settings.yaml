@@ -28,4 +28,32 @@ llm-pi-ai:
         - id: claude-haiku-4-5-20251001
           name: Claude Haiku 4.5
           input: [text, image]
-EOF
+    google:
+      displayName: Gemini
+      apiKeyEnv: GEMINI_API_KEY
+      api: openai-completions
+      baseURL: https://generativelanguage.googleapis.com/v1beta/openai
+      defaultContextWindow: 128000
+      defaultMaxTokens: 8192
+      models:
+        - id: gemini-3.8-flash
+          name: Gemini 3.8 Flash
+          input: [text, image]
+        - id: gemini-3.5-flash-lite
+          name: Gemini 3.5 Flash-Lite
+          input: [text, image]
+        - id: gemini-3.1-pro-preview
+          name: Gemini 3.1 Pro (preview)
+          input: [text, image]
+    openrouter:
+      displayName: OpenRouter
+      apiKeyEnv: OPENROUTER_API_KEY
+      api: openai-completions
+      baseURL: https://openrouter.ai/api/v1
+      defaultContextWindow: 128000
+      defaultMaxTokens: 8192
+      models:
+        - id: openai/gpt-5.6-terra
+          name: GPT-5.6 Terra (OpenRouter)
+          input: [text, image]
+        # agrega aquí los modelos de DeepSeek u otros con su ID exacto
