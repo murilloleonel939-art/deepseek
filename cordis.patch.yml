@@ -81,6 +81,66 @@
           - id: deepseek/deepseek-v4.1-flash
             name: DeepSeek V4.1 Flash (de pago)
             input: [text, image]
+      groq:
+        displayName: Groq (plan gratuito)
+        apiKeyEnv: GROQ_API_KEY
+        api: openai-completions
+        baseURL: https://api.groq.com/openai/v1
+        defaultContextWindow: 131072
+        defaultMaxTokens: 4096
+        models:
+          - id: openai/gpt-oss-120b
+            name: GPT-OSS 120B
+            input: [text]
+          - id: openai/gpt-oss-20b
+            name: GPT-OSS 20B (más rápido)
+            input: [text]
+      mistral:
+        displayName: Mistral (plan gratuito)
+        apiKeyEnv: MISTRAL_API_KEY
+        api: openai-completions
+        baseURL: https://api.mistral.ai/v1
+        defaultContextWindow: 128000
+        defaultMaxTokens: 4096
+        models:
+          - id: mistral-large-latest
+            name: Mistral Large
+            input: [text]
+          - id: mistral-small-latest
+            name: Mistral Small (rápido)
+            input: [text]
+          - id: codestral-latest
+            name: Codestral (código)
+            input: [text]
+          - id: ministral-8b-latest
+            name: Ministral 8B (ligero)
+            input: [text]
+      nvidia:
+        displayName: NVIDIA NIM (gratis)
+        apiKeyEnv: NVIDIA_API_KEY
+        api: openai-completions
+        baseURL: https://integrate.api.nvidia.com/v1
+        defaultContextWindow: 128000
+        defaultMaxTokens: 4096
+        models:
+          - id: meta/llama-3.3-70b-instruct
+            name: Llama 3.3 70B
+            input: [text]
+          - id: nvidia/llama-3.3-nemotron-super-49b-v1.5
+            name: Nemotron Super 49B
+            input: [text]
+          - id: nvidia/nemotron-3-super-120b-a12b
+            name: Nemotron 3 Super 120B
+            input: [text]
+          - id: nvidia/llama-3.1-nemotron-ultra-253b-v1
+            name: Nemotron Ultra 253B (razonamiento)
+            input: [text]
+          - id: nvidia/nvidia-nemotron-nano-9b-v2
+            name: Nemotron Nano 9B (rápido)
+            input: [text]
+          - id: meta/llama-4-maverick-17b-128e-instruct
+            name: Llama 4 Maverick
+            input: [text, image]
 - id: agent-default-model
   name: "@deepseek-ai/dsh-agent-default-model"
   config:
