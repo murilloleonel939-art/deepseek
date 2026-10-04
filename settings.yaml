@@ -81,24 +81,18 @@ llm-pi-ai:
           input: [text, image]
 
     groq:
-      displayName: Groq (Rápido & Gratis)
+      displayName: Groq (plan gratuito)
       apiKeyEnv: GROQ_API_KEY
       api: openai-completions
       baseURL: https://api.groq.com/openai/v1
-      defaultContextWindow: 8000
-      defaultMaxTokens: 2048
+      defaultContextWindow: 131072
+      defaultMaxTokens: 4096
       models:
-        - id: mixtral-8x7b-32768
-          name: Mixtral 8x7B (Rápido)
+        - id: openai/gpt-oss-120b
+          name: GPT-OSS 120B
           input: [text]
-        - id: llama-3.1-70b-versatile
-          name: Llama 3.1 70B
-          input: [text]
-        - id: llama-3.1-8b-instant
-          name: Llama 3.1 8B (Ultra rápido)
-          input: [text]
-        - id: gemma2-9b-it
-          name: Gemma 2 9B
+        - id: openai/gpt-oss-20b
+          name: GPT-OSS 20B (más rápido)
           input: [text]
 
     ollama:
