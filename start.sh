@@ -1,9 +1,6 @@
 #!/bin/sh
 set -e
 
-echo "Inicializando DSH..."
-su dsh -c "dsh init --non-interactive" || true
-
 echo "Configurando permisos..."
 chown -R dsh:dsh /home/dsh/.dsh /home/dsh/workspace
 
