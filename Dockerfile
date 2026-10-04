@@ -2,6 +2,7 @@ FROM node:22
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     nginx curl wget ca-certificates git build-essential python3 libseccomp2 \
+    libc6 libstdc++6 libgcc1 \
     && npm install -g @deepseek-ai/dsh \
     && rm -rf /var/lib/apt/lists/* \
     && useradd -m dsh && mkdir -p /home/dsh/workspace && chown -R dsh /home/dsh
