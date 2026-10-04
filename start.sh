@@ -11,8 +11,8 @@ if [ -f /app/cordis.patch.yml ] && [ -d /home/dsh/.dsh/profiles/web ]; then
   chmod 600 /home/dsh/.dsh/profiles/web/cordis.patch.yml
 fi
 
-echo "Levantando DSH en puerto 3080..."
-su dsh -c "cd /home/dsh/workspace && dsh web --no-open --port 3080 --trusted-host midsh.duckdns.org" &
+echo "Levantando DSH en puerto 3080 (sin sandbox)..."
+su dsh -c "cd /home/dsh/workspace && dsh web --no-open --port 3080 --no-sandbox --trusted-host midsh.duckdns.org" &
 
 echo "Levantando nginx..."
 exec nginx -g 'daemon off;'
