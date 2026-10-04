@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && useradd -m dsh && mkdir -p /home/dsh/workspace /home/dsh/.dsh && chown -R dsh /home/dsh
 
 # ✅ COPIA settings.yaml a las dos ubicaciones que usa DSH
+COPY settings.yaml /app/settings.yaml
 COPY settings.yaml /home/dsh/workspace/settings.yaml
 COPY settings.yaml /home/dsh/.dsh/settings.yaml.imported
 RUN chown dsh:dsh /home/dsh/workspace/settings.yaml /home/dsh/.dsh/settings.yaml.imported
