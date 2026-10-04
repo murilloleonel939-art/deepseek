@@ -9,6 +9,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && useradd -m dsh && mkdir -p /home/dsh/workspace && chown -R dsh /home/dsh
 
+# ✅ COPIA settings.yaml
+COPY settings.yaml /app/settings.yaml
+
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY cordis.patch.yml /app/cordis.patch.yml
 COPY start.sh /start.sh
