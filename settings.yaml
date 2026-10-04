@@ -1,4 +1,4 @@
-  llm-pi-ai:
+llm-pi-ai:
   providers:
     openai:
       displayName: OpenAI
@@ -14,6 +14,7 @@
         - id: gpt-4-turbo
           name: GPT-4 Turbo
           input: [text, image]
+
     anthropic:
       displayName: Claude
       apiKeyEnv: ANTHROPIC_API_KEY
@@ -28,6 +29,7 @@
         - id: claude-haiku-4-5-20251001
           name: Claude Haiku 4.5
           input: [text, image]
+
     google:
       displayName: Gemini
       apiKeyEnv: GEMINI_API_KEY
@@ -45,6 +47,7 @@
         - id: gemini-3.1-pro-preview
           name: Gemini 3.1 Pro (preview)
           input: [text, image]
+
     openrouter:
       displayName: OpenRouter
       apiKeyEnv: OPENROUTER_API_KEY
@@ -76,3 +79,59 @@
         - id: deepseek/deepseek-v4.1-flash
           name: DeepSeek V4.1 Flash (de pago)
           input: [text, image]
+
+    groq:
+      displayName: Groq (Rápido & Gratis)
+      apiKeyEnv: GROQ_API_KEY
+      api: openai-completions
+      baseURL: https://api.groq.com/openai/v1
+      defaultContextWindow: 8000
+      defaultMaxTokens: 2048
+      models:
+        - id: mixtral-8x7b-32768
+          name: Mixtral 8x7B (Rápido)
+          input: [text]
+        - id: llama-3.1-70b-versatile
+          name: Llama 3.1 70B
+          input: [text]
+        - id: llama-3.1-8b-instant
+          name: Llama 3.1 8B (Ultra rápido)
+          input: [text]
+        - id: gemma2-9b-it
+          name: Gemma 2 9B
+          input: [text]
+
+    ollama:
+      displayName: Ollama (Local EC2)
+      api: openai-completions
+      baseURL: http://localhost:11434/v1
+      defaultContextWindow: 4096
+      defaultMaxTokens: 2048
+      models:
+        - id: mistral
+          name: Mistral 7B
+          input: [text]
+        - id: llama2
+          name: Llama 2 7B
+          input: [text]
+        - id: neural-chat
+          name: Neural Chat 7B
+          input: [text]
+        - id: dolphin-mixtral
+          name: Dolphin Mixtral
+          input: [text]
+
+    deepseek:
+      displayName: DeepSeek
+      apiKeyEnv: DEEPSEEK_API_KEY
+      api: openai-completions
+      baseURL: https://api.deepseek.com/v1
+      defaultContextWindow: 64000
+      defaultMaxTokens: 4096
+      models:
+        - id: deepseek-chat
+          name: DeepSeek Chat
+          input: [text]
+        - id: deepseek-coder
+          name: DeepSeek Coder
+          input: [text]
