@@ -7,11 +7,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && npm install -g @deepseek-ai/dsh --verbose \
     && npm cache clean --force \
     && rm -rf /var/lib/apt/lists/* \
-    && useradd -m dsh && mkdir -p /home/dsh/workspace && chown -R dsh /home/dsh
+    && useradd -m dsh && mkdir -p /home/dsh/workspace /home/dsh/.dsh && chown -R dsh /home/dsh
 
-# ✅ COPIA settings.yaml a la ubicación correcta de DSH
+# ✅ COPIA settings.yaml a las dos ubicaciones que usa DSH
 COPY settings.yaml /home/dsh/workspace/settings.yaml
-RUN chown dsh:dsh /home/dsh/workspace/settings.yaml
+COPY settings.yaml /home/dsh/.dsh/settings.yaml.imported
+RUN chown dsh:dsh /home/dsh/workspace/settings.yaml /home/dsh/.dsh/settings.yaml.imported
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY cordis.patch.yml /app/cordis.patch.yml
