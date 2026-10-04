@@ -1,7 +1,7 @@
 FROM node:22-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    nginx curl wget ca-certificates \
+    nginx curl wget ca-certificates git \
     && rm -rf /var/lib/apt/lists/* \
     && npm install -g @deepseek-ai/dsh \
     && useradd -m dsh && mkdir -p /home/dsh/workspace && chown -R dsh /home/dsh
