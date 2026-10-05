@@ -82,12 +82,12 @@
             name: DeepSeek V4.1 Flash (de pago)
             input: [text, image]
       groq:
-        displayName: Groq (plan gratuito)
+        displayName: Groq (plan gratuito - contexto bajo)
         apiKeyEnv: GROQ_API_KEY
         api: openai-completions
         baseURL: https://api.groq.com/openai/v1
-        defaultContextWindow: 4096
-        defaultMaxTokens: 1024
+        defaultContextWindow: 2048
+        defaultMaxTokens: 512
         models:
           - id: openai/gpt-oss-120b
             name: GPT-OSS 120B
@@ -116,18 +116,15 @@
             name: Ministral 8B (ligero)
             input: [text]
       nvidia:
-        displayName: NVIDIA NIM (gratis)
+        displayName: NVIDIA NIM (gratis, lista actualizada)
         apiKeyEnv: NVIDIA_API_KEY
         api: openai-completions
         baseURL: https://integrate.api.nvidia.com/v1
         defaultContextWindow: 128000
         defaultMaxTokens: 4096
         models:
-          - id: meta/llama-3.3-70b-instruct
-            name: Llama 3.3 70B
-            input: [text]
-          - id: nvidia/llama-3.3-nemotron-super-49b-v1.5
-            name: Nemotron Super 49B
+          - id: nvidia/nemotron-4-340b-instruct
+            name: Nemotron 4 340B (potente)
             input: [text]
           - id: nvidia/nemotron-3-super-120b-a12b
             name: Nemotron 3 Super 120B
@@ -135,12 +132,21 @@
           - id: nvidia/llama-3.1-nemotron-ultra-253b-v1
             name: Nemotron Ultra 253B (razonamiento)
             input: [text]
-          - id: nvidia/nvidia-nemotron-nano-9b-v2
-            name: Nemotron Nano 9B (rápido)
+          - id: nvidia/llama-3.1-nemotron-70b-instruct
+            name: Llama 3.1 Nemotron 70B
             input: [text]
-          - id: meta/llama-4-maverick-17b-128e-instruct
-            name: Llama 4 Maverick
+          - id: nvidia/nemotron-3.5-lightning-30b-a3b
+            name: Nemotron 3.5 Lightning 30B (rápido)
+            input: [text]
+          - id: meta/llama-3.2-90b-vision-instruct
+            name: Llama 3.2 90B Vision
             input: [text, image]
+          - id: mistralai/mistral-large
+            name: Mistral Large (NVIDIA)
+            input: [text]
+          - id: nvidia/nv-embedqa-mistral-7b-v2
+            name: Mistral 7B NV (ligero)
+            input: [text]
 - id: agent-default-model
   name: "@deepseek-ai/dsh-agent-default-model"
   config:
