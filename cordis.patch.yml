@@ -103,17 +103,23 @@
         defaultContextWindow: 128000
         defaultMaxTokens: 4096
         models:
-          - id: mistral-large-latest
-            name: Mistral Large
+          - id: mistral-medium-3.5
+            name: Mistral Medium 3.5 (potente)
             input: [text]
           - id: mistral-small-latest
             name: Mistral Small (rápido)
             input: [text]
-          - id: codestral-latest
-            name: Codestral (código)
+          - id: ministral-14b-latest
+            name: Ministral 14B (balance)
             input: [text]
           - id: ministral-8b-latest
             name: Ministral 8B (ligero)
+            input: [text]
+          - id: codestral-latest
+            name: Codestral (código)
+            input: [text]
+          - id: magistral-small-latest
+            name: Magistral Small (razonamiento)
             input: [text]
       nvidia:
         displayName: NVIDIA NIM (gratis, lista actualizada)
