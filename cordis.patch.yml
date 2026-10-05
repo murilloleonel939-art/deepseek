@@ -86,8 +86,8 @@
         apiKeyEnv: GROQ_API_KEY
         api: openai-completions
         baseURL: https://api.groq.com/openai/v1
-        defaultContextWindow: 131072
-        defaultMaxTokens: 4096
+        defaultContextWindow: 4096
+        defaultMaxTokens: 1024
         models:
           - id: openai/gpt-oss-120b
             name: GPT-OSS 120B
