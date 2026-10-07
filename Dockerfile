@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     nginx curl wget ca-certificates git build-essential python3 libseccomp2 \
     libc6 libstdc++6 libgcc1 \
     && npm cache clean --force \
-    && npm install -g @deepseek-ai/dsh --verbose \
+    && npm install -g @deepseek-ai/dsh@0.2.0-rc.2 --verbose \
     && npm cache clean --force \
     && rm -rf /var/lib/apt/lists/* \
     && useradd -m dsh && mkdir -p /home/dsh/workspace /home/dsh/.dsh && chown -R dsh /home/dsh
