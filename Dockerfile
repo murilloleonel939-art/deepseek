@@ -9,22 +9,38 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     openssh-client \
     build-essential \
     python3 \
+    python3-pip \
+    python3-venv \
     libseccomp2 \
     libc6 \
     libstdc++6 \
     libgcc1 \
+    && npm install -g @deepseek-ai/dsh@0.2.0-rc.2 \
     && npm cache clean --force \
-    && npm install -g @deepseek-ai/dsh@0.2.0-rc.2 --verbose \
-    && npm cache clean --force \
-    && rm -rf /var/lib/apt/lists/* \
     && useradd -m -s /bin/bash dsh \
     && mkdir -p \
         /home/dsh/workspace \
         /home/dsh/.dsh \
+        /home/dsh/.claude \
+        /home/dsh/.claude/skills \
         /home/dsh/.ssh \
         /tmp/dsh-credentials \
     && chown -R dsh:dsh /home/dsh /tmp/dsh-credentials \
     && chmod 700 /home/dsh/.ssh /tmp/dsh-credentials
+
+USER dsh
+ENV HOME=/home/dsh
+ENV PATH="/home/dsh/.local/bin:/home/dsh/.bun/bin:${PATH}"
+
+# Graphify
+RUN python3 -m pip install --user --break-system-packages graphifyy \
+    && graphify install
+
+# Claude-Mem para DeepSeek Harness
+ENV CLAUDE_MEM_ONLINE_OPTIN=false
+RUN npx --yes claude-mem install --ide dsh --dsh-profile tui
+
+USER root
 
 COPY settings.yaml /app/settings.yaml
 COPY settings.yaml /home/dsh/workspace/settings.yaml
