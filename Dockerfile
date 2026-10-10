@@ -26,6 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         /home/dsh/.dsh \
         /home/dsh/.claude \
         /home/dsh/.claude/skills \
+        /home/dsh/.claude-mem \
         /home/dsh/.ssh \
         /tmp/dsh-credentials \
     && chown -R dsh:dsh /home/dsh /tmp/dsh-credentials \
@@ -36,6 +37,7 @@ ENV PATH="/home/dsh/.local/bin:/home/dsh/.bun/bin:${PATH}"
 ENV PYTHONUNBUFFERED=1
 ENV GIT_TERMINAL_PROMPT=0
 ENV CLAUDE_MEM_ONLINE_OPTIN=false
+ENV CLAUDE_MEM_RUNTIME=worker
 
 USER dsh
 
@@ -45,7 +47,8 @@ RUN python3 -m pip install --user --break-system-packages graphifyy \
 RUN npx --yes claude-mem install \
     --ide dsh \
     --dsh-profile web \
-    --provider host
+    --provider claude \
+    --no-auto-start
 
 USER root
 
