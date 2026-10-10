@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && npm install -g @deepseek-ai/dsh@0.2.0-rc.2 \
     && npm cache clean --force \
     && rm -rf /var/lib/apt/lists/* \
+    && corepack enable \
+    && corepack prepare pnpm@latest --activate \
     && useradd -m -s /bin/bash dsh \
     && mkdir -p \
         /home/dsh/workspace \
@@ -42,7 +44,7 @@ RUN python3 -m pip install --user --break-system-packages graphifyy \
 
 RUN npx --yes claude-mem install \
     --ide dsh \
-    --dsh-profile tui \
+    --dsh-profile web \
     --provider host
 
 USER root
