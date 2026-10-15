@@ -72,25 +72,7 @@
           - id: gpt-5.5
             name: GPT-5.5 (Pateway)
             input: [text, image]
-
-      google:
-        displayName: Gemini
-        apiKeyEnv: GEMINI_API_KEY
-        api: openai-completions
-        baseURL: https://generativelanguage.googleapis.com/v1beta/openai
-        defaultContextWindow: 128000
-        defaultMaxTokens: 8192
-        models:
-          - id: gemini-3.8-flash
-            name: Gemini 3.8 Flash
-            input: [text, image]
-          - id: gemini-3.5-flash-lite
-            name: Gemini 3.5 Flash-Lite
-            input: [text, image]
-          - id: gemini-3.1-pro-preview
-            name: Gemini 3.1 Pro (preview)
-            input: [text, image]
-
+     
       openrouter:
         displayName: OpenRouter (múltiples modelos)
         apiKeyEnv: OPENROUTER_API_KEY
@@ -121,9 +103,6 @@
             name: North Mini Code (gratis)
           - id: openrouter/free
             name: OpenRouter Free (automático)
-            input: [text, image]
-          - id: deepseek/deepseek-v4.1-flash
-            name: DeepSeek V4.1 Flash (de pago)
             input: [text, image]
 
       groq:
@@ -179,68 +158,18 @@
         defaultContextWindow: 128000
         defaultMaxTokens: 4096
         models:
-          - id: nvidia/nemotron-4-340b-instruct
-            name: Nemotron 4 340B (potente)
-            input: [text]
           - id: nvidia/nemotron-3-super-120b-a12b
             name: Nemotron 3 Super 120B
             input: [text]
-          - id: nvidia/llama-3.1-nemotron-ultra-253b-v1
-            name: Nemotron Ultra 253B (razonamiento)
-            input: [text]
-          - id: nvidia/llama-3.1-nemotron-70b-instruct
-            name: Llama 3.1 Nemotron 70B
-            input: [text]
-          - id: nvidia/nemotron-3.5-lightning-30b-a3b
-            name: Nemotron 3.5 Lightning 30B (rápido)
-            input: [text]
-          - id: meta/llama-3.2-90b-vision-instruct
-            name: Llama 3.2 90B Vision
-            input: [text, image]
-          - id: mistralai/mistral-large
-            name: Mistral Large (NVIDIA)
-            input: [text]
-
-      deepseek:
-        displayName: DeepSeek
-        apiKeyEnv: DEEPSEEK_API_KEY
+         
+      pateway-deepseek:
+        displayName: Pateway (deepseek)
+        apiKeyEnv: PATEWAY_API_KEY
         api: openai-completions
-        baseURL: https://api.deepseek.com/v1
-        defaultContextWindow: 64000
-        defaultMaxTokens: 4096
+        baseURL: https://api.pateway.ai/v1
+        defaultContextWindow: 128000
+        defaultMaxTokens: 8192
         models:
-          - id: deepseek-chat
-            name: DeepSeek Chat
-            input: [text]
-          - id: deepseek-coder
-            name: DeepSeek Coder
-            input: [text]
-          - id: deepseek-reasoner
-            name: DeepSeek Reasoner
-            input: [text]
-
-      ollama:
-        displayName: Ollama (Local EC2)
-        api: openai-completions
-        baseURL: http://localhost:11434/v1
-        defaultContextWindow: 4096
-        defaultMaxTokens: 2048
-        models:
-          - id: mistral
-            name: Mistral 7B
-            input: [text]
-          - id: llama2
-            name: Llama 2 7B
-            input: [text]
-          - id: neural-chat
-            name: Neural Chat 7B
-            input: [text]
-          - id: dolphin-mixtral
-            name: Dolphin Mixtral
-            input: [text]
-          - id: llama3
-            name: Llama 3 8B
-            input: [text]
-          - id: llama3.1
-            name: Llama 3.1 8B
+          - id: DeepSeek-V4.1-Flash
+            name: DeepSeek-V4.1-Flash (pateway)
             input: [text]
