@@ -1,4 +1,4 @@
-- id: llm-pi-ai
+
   config:
     providers:
       openai:
