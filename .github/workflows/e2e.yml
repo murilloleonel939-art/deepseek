@@ -125,3 +125,4 @@ jobs:
           DSH_E2E_MAX_WORKERS: 4
           DSH_EXAMPLE_MODE: lib
         run: pnpm run test:e2e
+
