@@ -1,6 +1,6 @@
 llm-pi-ai:
-  providers:
-      openai:
+  providers:   
+       openai:
         displayName: OpenAI
         apiKeyEnv: OPENAI_API_KEY
         api: openai-completions
