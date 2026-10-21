@@ -1,179 +1,178 @@
 llm-pi-ai:
-  providers:   
-       openai:
-        displayName: OpenAI
-        apiKeyEnv: OPENAI_API_KEY
-        api: openai-completions
-        baseURL: https://api.openai.com/v1
-        defaultContextWindow: 128000
-        defaultMaxTokens: 8192
-        models:
-          - id: gpt-5.6-luna
-            name: GPT-5.6 Luna
-            input: [text, image]
-          - id: gpt-4-turbo
-            name: GPT-4 Turbo
-            input: [text, image]
-          - id: gpt-4o
-            name: GPT-4o
-            input: [text, image]
+  providers:
+    openai:
+      displayName: OpenAI
+      apiKeyEnv: OPENAI_API_KEY
+      api: openai-completions
+      baseURL: https://api.openai.com/v1
+      defaultContextWindow: 128000
+      defaultMaxTokens: 8192
+      models:
+        - id: gpt-5.6-luna
+          name: GPT-5.6 Luna
+          input: [text, image]
+        - id: gpt-4-turbo
+          name: GPT-4 Turbo
+          input: [text, image]
+        - id: gpt-4o
+          name: GPT-4o
+          input: [text, image]
 
-      anthropic:
-        displayName: Claude
-        apiKeyEnv: ANTHROPIC_API_KEY
-        api: anthropic-messages
-        baseURL: https://api.anthropic.com
-        defaultContextWindow: 200000
-        defaultMaxTokens: 8192
-        models:
-          - id: claude-sonnet-5-5
-            name: Claude Sonnet 5.5
-            input: [text, image]
-          - id: claude-haiku-4-5-20251001
-            name: Claude Haiku 4.5
-            input: [text, image]
-          - id: claude-opus-4-1
-            name: Claude Opus 4.1
-            input: [text, image]
+    anthropic:
+      displayName: Claude
+      apiKeyEnv: ANTHROPIC_API_KEY
+      api: anthropic-messages
+      baseURL: https://api.anthropic.com
+      defaultContextWindow: 200000
+      defaultMaxTokens: 8192
+      models:
+        - id: claude-sonnet-5-5
+          name: Claude Sonnet 5.5
+          input: [text, image]
+        - id: claude-haiku-4-5-20251001
+          name: Claude Haiku 4.5
+          input: [text, image]
+        - id: claude-opus-4-1
+          name: Claude Opus 4.1
+          input: [text, image]
 
-      pateway-claude:
-        displayName: Pateway (Claude)
-        apiKeyEnv: PATEWAY_API_KEY
-        api: anthropic-messages
-        baseURL: https://api.pateway.ai
-        defaultContextWindow: 200000
-        defaultMaxTokens: 8192
-        models:
-          - id: claude-opus-5-5
-            name: Claude Opus 5.5 (Pateway)
-            input: [text, image]
-          - id: claude-sonnet-5
-            name: Claude Sonnet 5 (Pateway)
-            input: [text, image]
-          - id: claude-haiku-4-5-20251001
-            name: Claude Haiku 4.5 (Pateway)
-            input: [text, image]
+    pateway-claude:
+      displayName: Pateway (Claude)
+      apiKeyEnv: PATEWAY_API_KEY
+      api: anthropic-messages
+      baseURL: https://api.pateway.ai
+      defaultContextWindow: 200000
+      defaultMaxTokens: 8192
+      models:
+        - id: claude-opus-5-5
+          name: Claude Opus 5.5 (Pateway)
+          input: [text, image]
+        - id: claude-sonnet-5
+          name: Claude Sonnet 5 (Pateway)
+          input: [text, image]
+        - id: claude-haiku-4-5-20251001
+          name: Claude Haiku 4.5 (Pateway)
+          input: [text, image]
 
-      pateway-openai:
-        displayName: Pateway (OpenAI)
-        apiKeyEnv: PATEWAY_API_KEY
-        api: openai-completions
-        baseURL: https://api.pateway.ai/v1
-        defaultContextWindow: 128000
-        defaultMaxTokens: 8192
-        models:
-          - id: gpt-6-luna
-            name: GPT-6 Luna (Pateway)
-            input: [text, image]
-          - id: gpt-5.6-terra
-            name: GPT-5.6 Terra (Pateway)
-            input: [text, image]
-          - id: gpt-5.5
-            name: GPT-5.5 (Pateway)
-            input: [text, image]
-     
-      openrouter:
-        displayName: OpenRouter (múltiples modelos)
-        apiKeyEnv: OPENROUTER_API_KEY
-        api: openai-completions
-        baseURL: https://openrouter.ai/api/v1
-        defaultContextWindow: 128000
-        defaultMaxTokens: 8192
-        models:
-          # NVIDIA
-    - id: nvidia/nemotron-3-ultra-550b-a55b:free
-      name: Nemotron 3 Ultra (gratis)
-    - id: nvidia/nemotron-3-super-120b-a12b:free
-      name: Nemotron 3 Super (gratis)
-    - id: nvidia/nemotron-3.5-super-vl:free
-      name: Nemotron 3.5 Super VL (gratis)
-      input: [text, image, video]
-    - id: nvidia/nemotron-3.5-content-safety:free
-      name: Nemotron 3.5 Content Safety (gratis)
-      input: [text, image]
-    - id: nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free
-      name: Nemotron 3 Nano Omni (gratis)
-      input: [text, image, audio, video]
+    pateway-openai:
+      displayName: Pateway (OpenAI)
+      apiKeyEnv: PATEWAY_API_KEY
+      api: openai-completions
+      baseURL: https://api.pateway.ai/v1
+      defaultContextWindow: 128000
+      defaultMaxTokens: 8192
+      models:
+        - id: gpt-6-luna
+          name: GPT-6 Luna (Pateway)
+          input: [text, image]
+        - id: gpt-5.6-terra
+          name: GPT-5.6 Terra (Pateway)
+          input: [text, image]
+        - id: gpt-5.5
+          name: GPT-5.5 (Pateway)
+          input: [text, image]
 
-    # Google AI Studio
-    - id: google/gemma-4-31b-it:free
-      name: Gemma 4 31B (gratis)
-      input: [text, image, video]
-    - id: google/gemma-4-26b-a4b-it:free
-      name: Gemma 4 26B A4B (gratis)
-      input: [text, image, video]
-    - id: google/lyria-3-pro-preview
-      name: Lyria 3 Pro Preview (gratis, música)
-      input: [text, image]
-    - id: google/lyria-3-clip-preview
-      name: Lyria 3 Clip Preview (gratis, música)
-      input: [text, image]
+    openrouter:
+      displayName: OpenRouter (múltiples modelos)
+      apiKeyEnv: OPENROUTER_API_KEY
+      api: openai-completions
+      baseURL: https://openrouter.ai/api/v1
+      defaultContextWindow: 128000
+      defaultMaxTokens: 8192
+      models:
+        - id: nvidia/nemotron-3-ultra-550b-a55b:free
+          name: Nemotron 3 Ultra (gratis)
+          input: [text, image]
+        - id: nvidia/nemotron-3-super-120b-a12b:free
+          name: Nemotron 3 Super (gratis)
+          input: [text, image]
+        - id: nvidia/nemotron-3.5-super-vl:free
+          name: Nemotron 3.5 Super VL (gratis)
+          input: [text, image, video]
+        - id: nvidia/nemotron-3.5-content-safety:free
+          name: Nemotron 3.5 Content Safety (gratis)
+          input: [text, image]
+        - id: nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free
+          name: Nemotron 3 Nano Omni (gratis)
+          input: [text, image, audio, video]
+        - id: google/gemma-4-31b-it:free
+          name: Gemma 4 31B (gratis)
+          input: [text, image, video]
+        - id: google/gemma-4-26b-a4b-it:free
+          name: Gemma 4 26B A4B (gratis)
+          input: [text, image, video]
+        - id: google/lyria-3-pro-preview
+          name: Lyria 3 Pro Preview (gratis, música)
+          input: [text, image]
+        - id: google/lyria-3-clip-preview
+          name: Lyria 3 Clip Preview (gratis, música)
+          input: [text, image]
 
-      groq:
-        displayName: Groq (Rápido & Gratis - Actualizado 2026)
-        apiKeyEnv: GROQ_API_KEY
-        api: openai-completions
-        baseURL: https://api.groq.com/openai/v1
-        defaultContextWindow: 8000
-        defaultMaxTokens: 2048
-        models:
-          - id: llama-3.1-8b-instant
-            name: Llama 3.1 8B Instant (Rápido)
-            input: [text]
-          - id: llama-3.3-70b-versatile
-            name: Llama 3.3 70B Versatile (Potente)
-            input: [text]
-          - id: openai/gpt-oss-120b
-            name: OpenAI GPT OSS 120B
-            input: [text]
-          - id: openai/gpt-oss-20b
-            name: OpenAI GPT OSS 20B (rápido)
-            input: [text]
+    groq:
+      displayName: Groq (Rápido & Gratis - Actualizado 2026)
+      apiKeyEnv: GROQ_API_KEY
+      api: openai-completions
+      baseURL: https://api.groq.com/openai/v1
+      defaultContextWindow: 8000
+      defaultMaxTokens: 2048
+      models:
+        - id: llama-3.1-8b-instant
+          name: Llama 3.1 8B Instant (Rápido)
+          input: [text]
+        - id: llama-3.3-70b-versatile
+          name: Llama 3.3 70B Versatile (Potente)
+          input: [text]
+        - id: openai/gpt-oss-120b
+          name: OpenAI GPT OSS 120B
+          input: [text]
+        - id: openai/gpt-oss-20b
+          name: OpenAI GPT OSS 20B (rápido)
+          input: [text]
 
-      mistral:
-        displayName: Mistral (Plan gratuito)
-        apiKeyEnv: MISTRAL_API_KEY
-        api: openai-completions
-        baseURL: https://api.mistral.ai/v1
-        defaultContextWindow: 128000
-        defaultMaxTokens: 4096
-        models:
-          - id: mistral-medium-3.5
-            name: Mistral Medium 3.5 (potente)
-            input: [text]
-          - id: mistral-small-latest
-            name: Mistral Small (rápido)
-            input: [text]
-          - id: ministral-14b-latest
-            name: Ministral 14B (balance)
-            input: [text]
-          - id: ministral-8b-latest
-            name: Ministral 8B (ligero)
-            input: [text]
-          - id: codestral-latest
-            name: Codestral (código)
-            input: [text]
+    mistral:
+      displayName: Mistral (Plan gratuito)
+      apiKeyEnv: MISTRAL_API_KEY
+      api: openai-completions
+      baseURL: https://api.mistral.ai/v1
+      defaultContextWindow: 128000
+      defaultMaxTokens: 4096
+      models:
+        - id: mistral-medium-3.5
+          name: Mistral Medium 3.5 (potente)
+          input: [text]
+        - id: mistral-small-latest
+          name: Mistral Small (rápido)
+          input: [text]
+        - id: ministral-14b-latest
+          name: Ministral 14B (balance)
+          input: [text]
+        - id: ministral-8b-latest
+          name: Ministral 8B (ligero)
+          input: [text]
+        - id: codestral-latest
+          name: Codestral (código)
+          input: [text]
 
-      nvidia:
-        displayName: NVIDIA NIM (Gratis)
-        apiKeyEnv: NVIDIA_API_KEY
-        api: openai-completions
-        baseURL: https://integrate.api.nvidia.com/v1
-        defaultContextWindow: 128000
-        defaultMaxTokens: 4096
-        models:
-          - id: nvidia/nemotron-3-super-120b-a12b
-            name: Nemotron 3 Super 120B
-            input: [text]
-         
-      pateway-deepseek:
-        displayName: Pateway (deepseek)
-        apiKeyEnv: PATEWAY_API_KEY
-        api: openai-completions
-        baseURL: https://api.pateway.ai/v1
-        defaultContextWindow: 128000
-        defaultMaxTokens: 8192
-        models:
-          - id: DeepSeek-V4.1-Flash
-            name: DeepSeek-V4.1-Flash (pateway)
-            input: [text]
+    nvidia:
+      displayName: NVIDIA NIM (Gratis)
+      apiKeyEnv: NVIDIA_API_KEY
+      api: openai-completions
+      baseURL: https://integrate.api.nvidia.com/v1
+      defaultContextWindow: 128000
+      defaultMaxTokens: 4096
+      models:
+        - id: nvidia/nemotron-3-super-120b-a12b
+          name: Nemotron 3 Super 120B
+          input: [text]
+
+    pateway-deepseek:
+      displayName: Pateway (DeepSeek)
+      apiKeyEnv: PATEWAY_API_KEY
+      api: openai-completions
+      baseURL: https://api.pateway.ai/v1
+      defaultContextWindow: 128000
+      defaultMaxTokens: 8192
+      models:
+        - id: DeepSeek-V4.1-Flash
+          name: DeepSeek-V4.1-Flash (Pateway)
+          input: [text]
