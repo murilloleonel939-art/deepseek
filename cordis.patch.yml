@@ -88,26 +88,67 @@
             name: Nemotron 3 Ultra (gratis)
           - id: nvidia/nemotron-3-super-120b-a12b:free
             name: Nemotron 3 Super (gratis)
+          - id: thinkingmachines/inkling:free
+            name: Inkling (gratis)
+            input: [text, image]
+          - id: qwen/qwen3.8-27b:free
+            name: Qwen 3.8 27B (gratis)
+            input: [text, image]
           - id: google/gemma-4-31b-it:free
             name: Gemma 4 31B (gratis)
             input: [text, image]
+          - id: poolside/laguna-s-2.1:free
+            name: Laguna S 2.1 (gratis, código)
+          - id: cohere/north-mini-code:free
+            name: North Mini Code (gratis)
           - id: openrouter/free
             name: OpenRouter Free (automático)
             input: [text, image]
-          - id: nvidia/nemotron-3-ultra-550b-a55b:free
-            name: Nemotron 3 Ultra (gratis)
-            input: [text, image]
-          - id: nvidia/nemotron-3-super-120b-a12b:free
-            name: Nemotron 3 Super (gratis)
-            input: [text, image]
-          - id: nvidia/nemotron-3.5-super-vl:free
-            name: Nemotron 3.5 Super VL (gratis)
-            input: [text, image, video]
-          - id: nvidia/nemotron-3.5-content-safety:free
-            name: Nemotron 3.5 Content Safety (gratis)
-            input: [text, image]
-          - id: nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free
-            name: Nemotron 3 Nano Omni (gratis)
+
+      groq:
+        displayName: Groq (Rápido & Gratis - Actualizado 2026)
+        apiKeyEnv: GROQ_API_KEY
+        api: openai-completions
+        baseURL: https://api.groq.com/openai/v1
+        defaultContextWindow: 8000
+        defaultMaxTokens: 2048
+        models:
+          - id: llama-3.1-8b-instant
+            name: Llama 3.1 8B Instant (Rápido)
+            input: [text]
+          - id: llama-3.3-70b-versatile
+            name: Llama 3.3 70B Versatile (Potente)
+            input: [text]
+          - id: openai/gpt-oss-120b
+            name: OpenAI GPT OSS 120B
+            input: [text]
+          - id: openai/gpt-oss-20b
+            name: OpenAI GPT OSS 20B (rápido)
+            input: [text]
+
+      mistral:
+        displayName: Mistral (Plan gratuito)
+        apiKeyEnv: MISTRAL_API_KEY
+        api: openai-completions
+        baseURL: https://api.mistral.ai/v1
+        defaultContextWindow: 128000
+        defaultMaxTokens: 4096
+        models:
+          - id: mistral-medium-3.5
+            name: Mistral Medium 3.5 (potente)
+            input: [text]
+          - id: mistral-small-latest
+            name: Mistral Small (rápido)
+            input: [text]
+          - id: ministral-14b-latest
+            name: Ministral 14B (balance)
+            input: [text]
+          - id: ministral-8b-latest
+            name: Ministral 8B (ligero)
+            input: [text]
+          - id: codestral-latest
+            name: Codestral (código)
+            input: [text]
 
       nvidia:
         displayName: NVIDIA NIM (Gratis)
